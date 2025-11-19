@@ -17,8 +17,8 @@ export function LegalCard({
       className={cn(
         "rounded-lg p-6",
         variant === "default"
-          ? "bg-[#1a1a1a] border border-[#252525]"
-          : "bg-[#1a1a1a] border border-[#9455f4]",
+          ? "bg-surface-tertiary border border"
+          : "bg-surface-tertiary border border-brand-purple",
         className
       )}
     >
@@ -26,4 +26,3 @@ export function LegalCard({
     </div>
   );
 }
-

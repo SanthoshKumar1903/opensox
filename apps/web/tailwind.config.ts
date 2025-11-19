@@ -34,6 +34,15 @@ const config: Config = {
           card: colors.background.card,
         },
 
+        // Dashboard-specific backgrounds
+        dash: {
+          base: colors.backgroundDash.base,
+          surface: colors.backgroundDash.surface,
+          raised: colors.backgroundDash.raised,
+          hover: colors.backgroundDash.hover,
+          border: colors.backgroundDash.border,
+        },
+
         // Border colors
         border: {
           DEFAULT: colors.border.DEFAULT,
@@ -48,6 +57,13 @@ const config: Config = {
           secondary: colors.text.secondary,
           tertiary: colors.text.tertiary,
           muted: colors.text.muted,
+          light: colors.text.light,
+        },
+
+        // Link colors
+        link: {
+          DEFAULT: colors.link.DEFAULT,
+          hover: colors.link.hover,
         },
 
         // Status colors

@@ -6,7 +6,7 @@ interface LegalContentProps {
 
 export function LegalContent({ children }: LegalContentProps) {
   return (
-    <div className="space-y-8 text-[#e1e1e1] leading-relaxed">{children}</div>
+    <div className="space-y-8 text-white leading-relaxed">{children}</div>
   );
 }
 

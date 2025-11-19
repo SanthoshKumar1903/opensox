@@ -41,7 +41,7 @@ export default function ShippingAndExchangePage() {
         {/* No Physical Products */}
         <LegalSection title="Digital Service Only">
           <LegalCard>
-            <p className="text-lg font-semibold text-[#9455f4] mb-4">
+            <p className="text-lg font-semibold text-brand-purple mb-4">
               As we provide software services, we do not support shipping or
               exchange.
             </p>
@@ -77,7 +77,7 @@ export default function ShippingAndExchangePage() {
               <h3 className="text-lg font-semibold mb-2">
                 ✅ Immediate Access
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 Start using Pro features right after payment confirmation
               </p>
             </LegalCard>
@@ -85,7 +85,7 @@ export default function ShippingAndExchangePage() {
               <h3 className="text-lg font-semibold mb-2">
                 🌐 Accessible Anywhere
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 Access your account from any device with internet connection
               </p>
             </LegalCard>
@@ -93,7 +93,7 @@ export default function ShippingAndExchangePage() {
               <h3 className="text-lg font-semibold mb-2">
                 🚫 No Waiting Period
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 No shipping delays or delivery issues to worry about
               </p>
             </LegalCard>
@@ -101,7 +101,7 @@ export default function ShippingAndExchangePage() {
               <h3 className="text-lg font-semibold mb-2">
                 🔄 No Exchanges Needed
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 Digital services are delivered as described with instant access
               </p>
             </LegalCard>
@@ -147,7 +147,7 @@ export default function ShippingAndExchangePage() {
             For more information about cancellations, please see our{" "}
             <Link
               href="/legal/cancellation-and-refund"
-              className="text-blue-400 hover:text-blue-300 transition-colors"
+              className="text-link hover:text-link-hover transition-colors"
             >
               Cancellation and Refund Policy
             </Link>
@@ -168,23 +168,23 @@ export default function ShippingAndExchangePage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/legal/cancellation-and-refund"
-              className="bg-[#1a1a1a] border border-[#252525] rounded-lg p-4 hover:border-[#363636] transition-colors"
+              className="bg-surface-tertiary border border rounded-lg p-4 hover:border-light transition-colors"
             >
               <h3 className="text-lg font-semibold mb-2">
                 Cancellation & Refund Policy
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 Learn about our cancellation process and refund policy
               </p>
             </Link>
             <Link
               href="/legal/terms"
-              className="bg-[#1a1a1a] border border-[#252525] rounded-lg p-4 hover:border-[#363636] transition-colors"
+              className="bg-surface-tertiary border border rounded-lg p-4 hover:border-light transition-colors"
             >
               <h3 className="text-lg font-semibold mb-2">
                 Terms and Conditions
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-light">
                 Review our complete terms of service
               </p>
             </Link>

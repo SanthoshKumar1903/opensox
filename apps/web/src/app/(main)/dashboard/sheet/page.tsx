@@ -49,7 +49,7 @@ const SheetTableRow = memo(function SheetTableRow({
 
   return (
     <TableRow
-      className={`border-y border-ox-sidebar bg-ox-content hover:bg-ox-sidebar transition-colors ${
+      className={`border-y border-dash-border bg-ox-content hover:bg-ox-sidebar transition-colors ${
         isComingSoon ? "opacity-50" : ""
       }`}
     >
@@ -379,7 +379,7 @@ export default function SheetPage() {
 
         <div
           className="
-          w-full bg-ox-content border border-ox-header rounded-lg
+          w-full bg-ox-content border border-dash-border rounded-lg
           flex-1 overflow-auto relative
           [&::-webkit-scrollbar]:w-2
           [&::-webkit-scrollbar]:h-2
@@ -391,7 +391,7 @@ export default function SheetPage() {
         >
           <Table className="w-full min-w-[600px] sm:min-w-[800px]">
             <TableHeader>
-              <TableRow className="border-b border-ox-header bg-ox-header">
+              <TableRow className="border-b border-dash-border bg-ox-header">
                 {tableColumns.map((name, i) => (
                   <TableHead
                     key={name}

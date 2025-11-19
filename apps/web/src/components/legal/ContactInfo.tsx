@@ -27,7 +27,7 @@ export function ContactInfo({
           <strong>Email:</strong>{" "}
           <a
             href="mailto:hi@opensox.ai"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-link hover:text-link-hover transition-colors"
           >
             hi@opensox.ai
           </a>
@@ -36,7 +36,7 @@ export function ContactInfo({
           <strong>Phone:</strong>{" "}
           <a
             href="tel:+918447500346"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-link hover:text-link-hover transition-colors"
           >
             +91 844-7500-346
           </a>
@@ -46,7 +46,7 @@ export function ContactInfo({
             <strong>Contact Page:</strong>{" "}
             <Link
               href="/contact"
-              className="text-blue-400 hover:text-blue-300 transition-colors"
+              className="text-link hover:text-link-hover transition-colors"
             >
               opensox.ai/contact
             </Link>

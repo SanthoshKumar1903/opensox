@@ -15,7 +15,7 @@ export default function SidebarItem({ itemName, onclick, icon, collapsed = false
     <div
       className={`w-full h-[44px] flex items-center rounded-md cursor-pointer transition-colors px-2 ${
         collapsed ? "justify-center" : "gap-3 pl-3"
-      } hover:bg-[#292929] group`}
+      } hover:bg-dash-hover group`}
       onClick={onclick}
     >
       {icon && (

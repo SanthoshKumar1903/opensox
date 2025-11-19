@@ -9,94 +9,110 @@ export const colors = {
   // Brand Colors - Primary purple for CTAs, highlights, and brand elements
   brand: {
     purple: {
-      DEFAULT: "#9455f4", // Primary brand purple
-      light: "#a675f5", // Lighter variant for hover states
-      dark: "#7A45C3", // Darker variant for depth
+      DEFAULT: " #5519f7", // Primary brand purple
+      light: " #8a5cf4", // Lighter variant for hover states
+      dark: " #7A45C3", // Darker variant for depth
       gradient: {
-        from: "#9455f4",
-        to: "#7A45C3",
+        from: " #9455f4",
+        to: " #7A45C3",
       },
       // Text gradient (higher contrast)
       textGradient: {
-        from: "#9455f4",
-        to: "#341e7b",
+        from: " #9455f4",
+        to: " #341e7b",
       },
       // Button specific colors
       button: {
         gradient: {
-          from: "#5728f4",
-          to: "#5100FF",
+          from: " #5728f4",
+          to: " #5100FF",
         },
-        border: "#6348fc",
-        shadow: "#2c04b1",
+        border: " #6348fc",
+        shadow: " #2c04b1",
       },
       // Effects
       glow: "rgba(145, 89, 226, 0.5)",
-      grid: "#3F1FBC", // For flickering grid effect
+      grid: " #3F1FBC", // For flickering grid effect
     },
   },
 
-  // Background / Surface Colors
+  // Background / Surface Colors (Mostly for the landing page)
   background: {
-    primary: "#101010", // Main app background
-    secondary: "#141414", // Sidebar, secondary surfaces
-    tertiary: "#1A1A1A", // Content areas, cards
-    elevated: "#1E1E1E", // Elevated cards, modals
-    hover: "#15161A", // Hover states for dark surfaces
-    card: "#111111", // Card backgrounds
+    primary: " #101010", // Main app background
+    secondary: " #141414", // Sidebar, secondary surfaces
+    tertiary: " #1A1A1A", // Content areas, cards
+    elevated: " #1E1E1E", // Elevated cards, modals
+    hover: " #15161A", // Hover states for dark surfaces
+    card: " #111111", // Card backgrounds
+  },
+
+  // Background / Surface Colors (for /dashboard)
+  backgroundDash: {
+    base: " #1e1e1e", // Page background (darkest)
+    surface: " #262626", // Panels, cards, navbars
+    raised: " #363636", // Buttons, inputs, interactive surfaces
+    hover: "rgb(28, 28, 28)", // Hover for raised items
+    border: "rgb(43, 42, 42)", // Thin dividers, borders
   },
 
   // Border Colors
   border: {
-    DEFAULT: "#252525", // Primary border color
-    light: "#363636", // Lighter borders for nested elements
-    dark: "#292929", // Darker borders
-    focus: "#9455f4", // Focus states (brand purple)
-    github: "#30363d", // GitHub-style borders
+    DEFAULT: " #252525", // Primary border color
+    light: " #141414", // Lighter borders for nested elements
+    dark: " #292929", // Darker borders
+    focus: " #9455f4", // Focus states (brand purple)
+    github: " #30363d", // GitHub-style borders
   },
 
   // Text Colors
   text: {
-    primary: "#ffffff", // Primary white text
-    secondary: "#e1e1e1", // Secondary text
-    tertiary: "#d1d1d1", // Tertiary/muted text
-    muted: "#a1a1a1", // Very muted text
+    primary: " #ffffff", // Primary white text
+    secondary: " #e1e1e1", // Secondary text
+    tertiary: " #d1d1d1", // Tertiary/muted text
+    muted: " #a1a1a1", // Very muted text
+    light: " #363636", // Light gray text for copyright/footer
+  },
+
+  // Link Colors
+  link: {
+    DEFAULT: " #60a5fa", // blue-400 - Default link color
+    hover: " #93c5fd", // blue-300 - Hover state
   },
 
   // Status Colors
   status: {
     success: {
-      bg: "#002d21",
-      text: "#00bd7c",
-      border: "#00bd7c",
+      bg: " #002d21",
+      text: " #00bd7c",
+      border: " #00bd7c",
     },
     error: {
-      bg: "#2d0000",
-      text: "#ff4444",
-      border: "#ff4444",
+      bg: " #2d0000",
+      text: " #ff4444",
+      border: " #ff4444",
     },
     warning: {
-      bg: "#2d2400",
-      text: "#ffcc00",
-      border: "#ffcc00",
+      bg: " #2d2400",
+      text: " #ffcc00",
+      border: " #ffcc00",
     },
     info: {
-      bg: "#00182d",
-      text: "#4499ff",
-      border: "#4499ff",
+      bg: " #00182d",
+      text: " #4499ff",
+      border: " #4499ff",
     },
   },
 
   // External Brand Colors (GitHub, etc.)
   external: {
     github: {
-      bg: "#0d1117",
-      hover: "#161b22",
-      border: "#30363d",
+      bg: " #0d1117",
+      hover: " #161b22",
+      border: " #30363d",
     },
     users: {
-      from: "#FF6154",
-      to: "#FF8C00",
+      from: " #FF6154",
+      to: " #FF8C00",
     },
   },
 } as const;

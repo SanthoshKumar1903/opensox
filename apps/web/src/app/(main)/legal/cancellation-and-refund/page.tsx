@@ -40,7 +40,7 @@ export default function CancellationAndRefundPage() {
         {/* Refund Policy */}
         <LegalSection title="Refund Policy">
           <LegalCard>
-            <p className="text-lg font-semibold text-[#9455f4] mb-4">
+            <p className="text-lg font-semibold text-brand-purple mb-4">
               Currently, we do not support refunds for our services.
             </p>
             <p className="mb-4">
@@ -80,14 +80,14 @@ export default function CancellationAndRefundPage() {
               <h3 className="text-lg font-semibold mb-2">
                 📚 Review Our Features
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-muted">
                 Carefully review all features included in your subscription plan
                 on our pricing page
               </p>
             </LegalCard>
             <LegalCard>
               <h3 className="text-lg font-semibold mb-2">💬 Ask Questions</h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-muted">
                 Reach out to us with any questions or concerns before purchasing
               </p>
             </LegalCard>
@@ -95,7 +95,7 @@ export default function CancellationAndRefundPage() {
               <h3 className="text-lg font-semibold mb-2">
                 🆓 Try Free Features
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-muted">
                 Use our free tier to understand how the platform works before
                 upgrading
               </p>
@@ -104,7 +104,7 @@ export default function CancellationAndRefundPage() {
               <h3 className="text-lg font-semibold mb-2">
                 👥 Join Our Community
               </h3>
-              <p className="text-sm text-[#b1b1b1]">
+              <p className="text-sm text-muted">
                 Connect with existing users on Discord to hear about their
                 experiences
               </p>

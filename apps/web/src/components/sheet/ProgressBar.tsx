@@ -16,7 +16,7 @@ export function ProgressBar({ completed, total, className }: ProgressBarProps) {
   return (
     <div
       className={cn(
-        "flex items-center justify-between bg-ox-content rounded-lg px-4 py-3 border border-ox-header",
+        "flex items-center justify-between bg-ox-content rounded-lg px-4 py-3 border border-dash-border",
         className
       )}
     >
@@ -37,7 +37,7 @@ export function ProgressBar({ completed, total, className }: ProgressBarProps) {
             cy="32"
             r="28"
             stroke="rgb(38 38 38)"
-            strokeWidth="6"
+            strokeWidth="8"
             fill="none"
           />
           {/* Progress circle */}
@@ -45,8 +45,8 @@ export function ProgressBar({ completed, total, className }: ProgressBarProps) {
             cx="32"
             cy="32"
             r="28"
-            stroke="#9455f4"
-            strokeWidth="6"
+            stroke=" #5519f7"
+            strokeWidth="8"
             fill="none"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
@@ -62,4 +62,3 @@ export function ProgressBar({ completed, total, className }: ProgressBarProps) {
     </div>
   );
 }
-

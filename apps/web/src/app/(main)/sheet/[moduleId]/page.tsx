@@ -163,7 +163,7 @@ export default function ModuleDocPage() {
           <div className="mb-6">
             <Link
               href="/dashboard/sheet"
-              className="inline-flex items-center gap-2 text-ox-purple hover:text-ox-purple-2 transition-colors mb-4"
+              className="inline-flex items-center gap-2 text-brand-purple-light hover:text-brand-purple transition-colors mb-4"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Sheet</span>
@@ -194,7 +194,7 @@ export default function ModuleDocPage() {
           <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
             <Link
               href="/dashboard/sheet"
-              className="inline-flex items-center gap-2 text-ox-purple hover:text-ox-purple-2 transition-colors"
+              className="inline-flex items-center gap-2 text-brand-purple-light hover:text-brand-purple transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Sheet</span>
