@@ -31,9 +31,12 @@ export default function DashboardLayout({
       <div className="flex-1 flex flex-col h-full bg-dash-base">
         <div className="xl:hidden flex items-center h-16 px-4 border-b border-dash-border bg-dash-base">
           <IconWrapper onClick={() => setShowSidebar(true)}>
-            <Bars3Icon className="size-5 text-ox-purple" />
+            <Bars3Icon className="size-5 text-brand-purple" />
           </IconWrapper>
-          <Link href="/" className="ml-4 text-lg font-semibold text-ox-white hover:text-ox-purple transition-colors">
+          <Link
+            href="/"
+            className="ml-4 text-lg font-semibold text-text-primary hover:text-brand-purple transition-colors"
+          >
             Opensox
           </Link>
         </div>

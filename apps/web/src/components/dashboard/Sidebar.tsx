@@ -78,13 +78,13 @@ export default function Sidebar({ overlay = false }: { overlay?: boolean }) {
         <div className="flex items-center">
           <Link
             href="/"
-            className="text-xl font-semibold text-ox-white hover:text-ox-purple transition-colors cursor-pointer"
+            className="text-xl font-semibold text-text-primary hover:text-brand-purple transition-colors cursor-pointer"
           >
             Opensox AI
           </Link>
         </div>
         <IconWrapper onClick={() => setShowSidebar(false)}>
-          <XMarkIcon className="size-5 text-ox-purple" />
+          <XMarkIcon className="size-5 text-brand-purple" />
         </IconWrapper>
       </div>
 
@@ -93,7 +93,7 @@ export default function Sidebar({ overlay = false }: { overlay?: boolean }) {
         {!isCollapsed && (
           <Link
             href="/"
-            className="text-[#eaeaea] font-semibold tracking-wide select-none text-xl hover:text-ox-purple transition-colors cursor-pointer"
+            className="text-text-secondary font-semibold tracking-wide select-none text-xl hover:text-brand-purple transition-colors cursor-pointer"
           >
             Opensox AI
           </Link>
@@ -103,9 +103,9 @@ export default function Sidebar({ overlay = false }: { overlay?: boolean }) {
           className={isCollapsed ? "w-full flex justify-center" : ""}
         >
           {isCollapsed ? (
-            <ChevronRightIcon className="size-5 text-ox-purple" />
+            <ChevronRightIcon className="size-5 text-brand-purple" />
           ) : (
-            <ChevronLeftIcon className="size-5 text-ox-purple" />
+            <ChevronLeftIcon className="size-5 text-brand-purple" />
           )}
         </IconWrapper>
       </div>
@@ -133,11 +133,11 @@ export default function Sidebar({ overlay = false }: { overlay?: boolean }) {
             className="w-full h-[44px] flex items-center rounded-md cursor-pointer transition-colors px-2 gap-3 pl-3 hover:bg-dash-hover group"
             onClick={proClickHandler}
           >
-            <span className="shrink-0 text-[#eaeaea] group-hover:text-white transition-colors">
+            <span className="shrink-0 text-text-secondary group-hover:text-text-primary transition-colors">
               <StarIcon className="size-5" />
             </span>
             <div className="flex items-center gap-1">
-              <h1 className="text-xs font-medium text-[#c8c8c8] group-hover:text-white transition-colors">
+              <h1 className="text-xs font-medium text-text-tertiary group-hover:text-text-primary transition-colors">
                 Opensox Pro
               </h1>
               <OpensoxProBadge className="px-1.5 py-0.5 scale-75" />
@@ -197,13 +197,13 @@ function ProfileMenu({ isCollapsed }: { isCollapsed: boolean }) {
         {!isCollapsed && (
           <div className="flex-1 flex items-center justify-between">
             <div className="flex flex-col">
-              <span className="text-xs text-[#eaeaea] font-semibold">
+              <span className="text-xs text-text-secondary font-semibold">
                 {firstName}
               </span>
-              <span className="text-[10px] text-zinc-400">{userEmail}</span>
+              <span className="text-[10px] text-text-muted">{userEmail}</span>
             </div>
             <ChevronLeftIcon
-              className={`size-4 text-zinc-400 transition-transform ${open ? "rotate-90" : "-rotate-90"}`}
+              className={`size-4 text-text-muted transition-transform ${open ? "rotate-90" : "-rotate-90"}`}
             />
           </div>
         )}
@@ -224,10 +224,10 @@ function ProfileMenu({ isCollapsed }: { isCollapsed: boolean }) {
               <div className="flex items-center gap-3">
                 <ProfilePic imageUrl={userImage} />
                 <div className="flex flex-col">
-                  <span className="text-sm text-white font-semibold">
+                  <span className="text-sm text-text-primary font-semibold">
                     {fullName}
                   </span>
-                  <span className="text-xs text-zinc-400">{userEmail}</span>
+                  <span className="text-xs text-text-muted">{userEmail}</span>
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ function ProfileMenu({ isCollapsed }: { isCollapsed: boolean }) {
                   router.push("/dashboard/account");
                   setOpen(false);
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-[#eaeaea] hover:bg-dash-hover transition-colors"
+                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-text-secondary hover:bg-dash-hover transition-colors"
               >
                 <Cog6ToothIcon className="size-4" />
                 <span>Account Settings</span>
@@ -249,7 +249,7 @@ function ProfileMenu({ isCollapsed }: { isCollapsed: boolean }) {
                   signOut({ callbackUrl: "/" });
                   setOpen(false);
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-[#eaeaea] hover:bg-dash-surface transition-colors"
+                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-text-secondary hover:bg-dash-surface transition-colors"
               >
                 <ArrowRightOnRectangleIcon className="size-4" />
                 <span>Logout</span>
