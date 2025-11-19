@@ -4,12 +4,12 @@ import path from "path";
 import matter from "gray-matter";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/lib/auth/config";
-import { serverTrpc } from "@/lib/trpc-server";
+import { createAuthenticatedClient } from "@/lib/trpc-server";
 
 // Cache newsletters in memory for faster subsequent loads
 let cachedNewsletters: any[] | null = null;
 let lastCacheTime = 0;
-const CACHE_DURATION = 60000; // 1 minute cache
+const CACHE_DURATION = 600000; // 6 minute cache
 
 export async function GET() {
   // Authenticate user
@@ -24,7 +24,8 @@ export async function GET() {
 
   // Verify paid subscription
   try {
-    const subscriptionStatus = await serverTrpc(session).user.subscriptionStatus.query();
+    const trpc = createAuthenticatedClient(session);
+    const subscriptionStatus = await (trpc.user as any).subscriptionStatus.query();
     
     if (!subscriptionStatus.isPaidUser) {
       return NextResponse.json(

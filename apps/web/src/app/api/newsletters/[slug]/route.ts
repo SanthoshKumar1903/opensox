@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/lib/auth/config";
-import { serverTrpc } from "@/lib/trpc-server";
+import { createAuthenticatedClient } from "@/lib/trpc-server";
 
 // Configure marked for rich markdown support
 marked.setOptions({
@@ -33,7 +33,8 @@ export async function GET(
 
   // Verify paid subscription
   try {
-    const subscriptionStatus = await serverTrpc.user.subscriptionStatus.query();
+    const trpc = createAuthenticatedClient(session);
+    const subscriptionStatus = await (trpc.user as any).subscriptionStatus.query();
     
     if (!subscriptionStatus.isPaidUser) {
       return NextResponse.json(
