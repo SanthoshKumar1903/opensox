@@ -9,7 +9,7 @@ import { createAuthenticatedClient } from "@/lib/trpc-server";
 // Cache newsletters in memory for faster subsequent loads
 let cachedNewsletters: any[] | null = null;
 let lastCacheTime = 0;
-const CACHE_DURATION = 600000; // 6 minute cache
+const CACHE_DURATION = 60000; 
 
 export async function GET() {
   // Authenticate user
