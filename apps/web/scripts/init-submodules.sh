@@ -1,5 +1,5 @@
 #!/bin/bash
-set +e
+set -e
 
 if [ -n "$GITHUB_TOKEN" ]; then
   echo "Using HTTPS with GitHub token"
@@ -27,22 +27,51 @@ elif [ -n "$GIT_SSH_KEY" ]; then
     exit 1
   fi
   
+  # Determine key type from the key header and use appropriate filename
+  if echo "$GIT_SSH_KEY" | grep -q "^ssh-ed25519"; then
+    SSH_KEY_FILE="$HOME/.ssh/id_ed25519"
+  elif echo "$GIT_SSH_KEY" | grep -q "^ssh-rsa"; then
+    SSH_KEY_FILE="$HOME/.ssh/id_rsa"
+  elif echo "$GIT_SSH_KEY" | grep -q "^ecdsa-sha2"; then
+    SSH_KEY_FILE="$HOME/.ssh/id_ecdsa"
+  elif echo "$GIT_SSH_KEY" | grep -q "^-----BEGIN"; then
+    # PEM format - could be RSA, ECDSA, or Ed25519, default to RSA
+    SSH_KEY_FILE="$HOME/.ssh/id_rsa"
+  else
+    # Fallback to ed25519 if type cannot be determined
+    SSH_KEY_FILE="$HOME/.ssh/id_ed25519"
+  fi
+  
   mkdir -p ~/.ssh
-  printf '%s' "$GIT_SSH_KEY" > ~/.ssh/id_ed25519
-  chmod 600 ~/.ssh/id_ed25519
+  printf '%s' "$GIT_SSH_KEY" > "$SSH_KEY_FILE"
+  chmod 600 "$SSH_KEY_FILE"
   ssh-keyscan github.com >> ~/.ssh/known_hosts
   
+  # Configure SSH to use the specific key file for GitHub
+  cat >> ~/.ssh/config <<EOF
+Host github.com
+  IdentityFile $SSH_KEY_FILE
+  IdentitiesOnly yes
+EOF
+  chmod 600 ~/.ssh/config
+  
 else
-  echo "No authentication found! Skipping premium submodule initialization."
+  echo "⚠️  No authentication found! Skipping premium submodule initialization."
   echo "Note: Public newsletters will still work. Premium newsletters require authentication."
+  echo "Status: SKIPPED (exit code 0 - build will continue without premium content)"
   exit 0
 fi
 
+# Only disable exit-on-error for submodule update to allow graceful failure
+set +e
 git submodule update --init --recursive --force
-if [ $? -eq 0 ]; then
+submodule_exit_code=$?
+set -e
+
+if [ $submodule_exit_code -eq 0 ]; then
   echo "Submodules initialized successfully"
 else
-  echo "Warning: Submodule initialization failed, but continuing build..."
-  echo "Note: Public newsletters will still work. Premium newsletters require authentication."
-  exit 0
+  echo "Error: Submodule initialization failed after authentication was provided."
+  echo "This may indicate network issues, invalid credentials, or repository problems."
+  exit $submodule_exit_code
 fi
