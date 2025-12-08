@@ -229,7 +229,7 @@ Your API server will be available at `http://localhost:4000`.
 
 ### Using Docker Compose for Database (Only)
 
-For a DB setup with PostgreSQL, cp .env.example .env in root directry with required variables, then run docker-compose.dev.yml
+For a DB setup with PostgreSQL, cp .env.example .env in root directory with required variables, then run docker-compose.dev.yml
 
 ```bash
 cp .env.example .env
