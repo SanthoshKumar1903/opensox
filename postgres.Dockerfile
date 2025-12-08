@@ -1,7 +1,0 @@
-FROM postgres:18.0-alpine3.22
-
-ENV POSTGRES_USER=opensox
-ENV POSTGRES_PASSWORD=opensox
-ENV POSTGRES_DB=opensox
-
-EXPOSE 5432
